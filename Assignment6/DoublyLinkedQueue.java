@@ -19,9 +19,11 @@ public class DoublyLinkedQueue{
 
     public void enqueue(Integer item){
         if (this.tail==null) this.head = this.tail = new Node(item, null, null);
-        Node new_node = new Node(item,this.tail,null);
-        this.tail.next = new_node;
-        this.tail = new_node;  
+        else {
+            Node new_node = new Node(item,this.tail,null);
+            this.tail.next = new_node;
+            this.tail = new_node;  
+        }
     }
 
     public Integer dequeue(){
